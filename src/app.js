@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast.js')
 const geocode = require('./utils/geocode.js')
 const app = express()
+const port = process.env.PORT || 3000
 const viewPath = path.join(__dirname,'../public/views')
 const partialPath = path.join(__dirname,'../public/partial')
 app.set('view engine','hbs')
@@ -73,6 +74,6 @@ app.get('*',(req,res)=>{
         name: "Ritwick Raj"
     })
 })
-app.listen(3000,()=>{
-    console.log("server is up on port 3000")
+app.listen(port,()=>{
+    console.log("server is up on port "+port)
 })
